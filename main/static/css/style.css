@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("../images/psa_lion.jpg") no-repeat center center/cover;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+}
+
+.hero .container {
+  z-index: 2;
+}
+
+.btn-light:hover,
+.btn-outline-light:hover {
+  transform: scale(1.05);
+  transition: 0.2s ease-in-out;
+}
+
+/* Transparent Navbar with subtle shadow */
+.navbar {
+  transition: background 0.3s ease;
+}
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.8) !important;
+}

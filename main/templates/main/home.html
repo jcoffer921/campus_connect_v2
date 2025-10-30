@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Campus Connect{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero d-flex align-items-center justify-content-center text-center text-white">
+  <div class="overlay"></div>
+  <div class="container position-relative">
+    <h1 class="display-3 fw-bold mb-3">Connect. Collaborate. Grow.</h1>
+    <p class="lead mb-4">Where students with shared majors and interests come together.</p>
+
+    <div class="d-flex justify-content-center gap-4">
+      <a href="/network/" class="btn btn-light btn-lg px-4 rounded-pill">Find Students</a>
+      <a href="/discussions/" class="btn btn-outline-light btn-lg px-4 rounded-pill">Join Discussions</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
