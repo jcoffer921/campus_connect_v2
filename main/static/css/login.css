@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== Layout ===== */
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* ===== Left Side (Logo Section) ===== */
+.login-left {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-logo {
+  width: 80%;              /* increased from 60% */
+  max-width: 480px;        /* was 350px — gives more presence */
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Optional subtle pop effect on hover */
+.login-logo:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 4px 12px rgba(30, 64, 124, 0.25));
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .login-logo {
+    width: 65%;
+    max-width: 300px;
+  }
+}
+
+
+/* ===== Right Side (Form Section) ===== */
+.login-form {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1E407C; /* Penn State Navy Blue */
+  padding: 2rem;
+  color: #F3F4F6;
+}
+
+.form-content {
+  width: 100%;
+  max-width: 380px;
+  text-align: left;
+}
+
+/* ===== Headline ===== */
+.form-content h2 {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+/* ===== Input Fields ===== */
+.form-label {
+  color: #E0E7FF;
+  font-weight: 500;
+}
+
+.form-control {
+  border-radius: 30px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background-color: #F9FAFB;
+  border: 1px solid #D1D5DB;
+  color: #111827;
+}
+
+.form-control:focus {
+  border-color: #93C5FD; /* light blue border on focus */
+  box-shadow: 0 0 0 0.2rem rgba(147, 197, 253, 0.4);
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background-color: #FFFFFF;
+  color: #1E407C;
+  border: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+  background-color: #E0E7FF;
+  color: #1E407C;
+}
+
+/* ===== Remember / Forgot ===== */
+.small {
+  color: #E0E7FF;
+}
+
+a.text-primary {
+  color: #93C5FD !important;
+}
+
+a.text-primary:hover {
+  color: #BFDBFE !important;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-left {
+    flex: none;
+    height: 40vh;
+  }
+
+  .login-form {
+    flex: none;
+    height: 60vh;
+  }
+}

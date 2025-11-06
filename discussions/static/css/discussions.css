@@ -1,11 +1,88 @@
+/* ============= HERO ============= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&display=swap');
+
+.discussions-hero {
+  position: relative;
+  overflow: hidden;
+  color: #F3F4F6;
+  font-family: 'Poppins', sans-serif;
+  padding: clamp(3rem, 7vw, 6rem) 1.25rem clamp(2rem, 4vw, 3rem);
+
+  /* Gradient background */
+  background: linear-gradient(135deg, #1E407C 0%, #1E56B0 100%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
+}
+
+/* Container */
+.discussions-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Headline */
+.discussions-hero h1 {
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 900;
+  margin: 0 0 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Subheading */
+.discussions-hero p {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #E0E7FF;
+  opacity: 0.95;
+}
+
+.hero h1 {
+  text-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+
+/* Optional animated gradient shimmer */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h2 {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.card h5 {
+  font-weight: 700;
+  color: #111827;
+}
+
 .discussion-card {
-    border-radius: 16px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 16px;
+  border: none;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: all 0.2s ease-in-out;
 }
 
 .discussion-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 .btn-outline-primary {
@@ -13,9 +90,29 @@
     padding: 5px 15px;
 }
 
+.btn-primary {
+  background-color: #2563EB;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.btn-primary:hover {
+  transform: scale(1.03);
+  background-color: #1D4ED8;
+}
+
+
 input.form-control {
-    border-radius: 20px;
-    padding: 10px 15px;
+  border-radius: 50px;
+  padding: 12px 20px;
+  border: 1px solid #E5E7EB;
+  background-color: #F9FAFB;
+  transition: box-shadow 0.2s ease;
+}
+input.form-control:focus {
+  border-color: #1E407C;
+  box-shadow: 0 0 0 3px rgba(30, 64, 124, 0.2);
 }
 
 form {

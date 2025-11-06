@@ -6,6 +6,13 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/discussions.css' %}">
 
+<section class="discussions-hero">
+  <div class="discussions-hero-content">
+    <h1>Join the Discussion</h1>
+    <p>Don't miss out on the hot topics</p>
+  </div>
+</section>
+
 <div class="container mt-5 mb-5">
     <h2 class="fw-bold text-center mb-4 text-primary">Discussions</h2>
 
@@ -21,7 +28,10 @@
             <h5 class="fw-bold">{{ discussion.title }}</h5>
             <small class="text-muted">{{ discussion.date_posted|date:"M d, Y" }}</small>
         </div>
-        <p class="mb-1 text-muted">Posted by {{ discussion.author }}</p>
+        <p class="mb-1 text-muted">
+          <img src="{% static 'images/default-avatar.png' %}" class="rounded-circle me-2" width="28" height="28">
+          Posted by {{ discussion.author }}
+        </p>
         <p>{{ discussion.preview|truncatewords:20 }}</p>
         <div class="d-flex justify-content-between align-items-center">
             <div class="text-muted">

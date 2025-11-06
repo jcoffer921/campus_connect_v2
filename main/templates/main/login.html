@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Campus Connect | Login{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<div class="login-container">
+  <!-- Left side (Logo) -->
+  <div class="login-left">
+    <img src="{% static 'images/campus-connect-logo-new.png' %}"
+         alt="Campus Connect Logo"
+         class="login-logo">
+  </div>
+
+  <!-- Right side (Login form) -->
+  <div class="login-form">
+    <div class="form-content">
+      <h2 class="fw-bold mb-4">Welcome back!</h2>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="username" class="form-label">Email address</label>
+          <input type="text" name="username" id="username" class="form-control" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div>
+            <input type="checkbox" id="remember">
+            <label for="remember" class="small">Remember password</label>
+          </div>
+          <a href="#" class="small text-decoration-none text-primary">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill">Sign In</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

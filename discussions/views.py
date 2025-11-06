@@ -43,4 +43,4 @@ def discussion_detail(request, pk):
             )
             return redirect('discussion_detail', pk=pk)
 
-    return render(request, 'discussions/discussion_detail.html', {'discussion': discussion})
+    return render(request, 'discussions/discussion_details.html', {'discussion': discussion})
