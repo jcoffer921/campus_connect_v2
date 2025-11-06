@@ -2,20 +2,51 @@
 {% load static %}
 
 {% block title %}Campus Connect{% endblock %}
-{% block content %}
 
+{% block content %}
 <!-- Hero Section -->
 <section class="hero d-flex align-items-center justify-content-center text-center text-white">
   <div class="overlay"></div>
   <div class="container position-relative">
-    <h1 class="display-3 fw-bold mb-3">Connect. Collaborate. Grow.</h1>
-    <p class="lead mb-4">Where students with shared majors and interests come together.</p>
+    <h1 class="display-3 fw-bold mb-3 fade-in">
+      We Are <span class="penn-state-text">Penn State</span>
+    </h1>
+    <p class="lead mb-4 fade-in-delay">A community where students connect, collaborate, and grow together.</p>
 
-    <div class="d-flex justify-content-center gap-4">
+    <div class="d-flex justify-content-center gap-4 fade-in-delay-2">
       <a href="/network/" class="btn btn-light btn-lg px-4 rounded-pill">Find Students</a>
       <a href="/discussions/" class="btn btn-outline-light btn-lg px-4 rounded-pill">Join Discussions</a>
     </div>
   </div>
 </section>
 
+<!-- Info Section -->
+<section class="about text-center py-5 bg-light text-dark">
+  <div class="container">
+    <h2 class="fw-bold mb-3">What is Campus Connect?</h2>
+    <p class="lead mb-5">
+      Campus Connect is a student networking platform built with Python and Django that uses
+      <strong>Graphs</strong> to model student relationships and <strong>Trees</strong> to structure discussion threads.
+      It helps students collaborate, find peers in similar majors, and engage in campus discussions.
+    </p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-3 card p-3 mx-2 shadow-sm hover-card">
+        <i class="fas fa-user-friends fa-3x text-primary mb-3"></i>
+        <h5>Build Connections</h5>
+        <p>Find peers based on shared interests or courses using intelligent graph algorithms.</p>
+      </div>
+      <div class="col-md-3 card p-3 mx-2 shadow-sm hover-card">
+        <i class="fas fa-comments fa-3x text-success mb-3"></i>
+        <h5>Join Discussions</h5>
+        <p>Engage in structured discussions organized hierarchically with tree structures.</p>
+      </div>
+      <div class="col-md-3 card p-3 mx-2 shadow-sm hover-card">
+        <i class="fas fa-envelope fa-3x text-warning mb-3"></i>
+        <h5>Send Messages</h5>
+        <p>Communicate privately with other students through the messaging system.</p>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

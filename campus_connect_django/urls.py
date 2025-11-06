@@ -23,5 +23,6 @@ urlpatterns = [
     path('network/', include('campus_Connect_Django.network.urls')),
     path('direct_messages/', include('campus_Connect_Django.direct_messages.urls')),
     path('discussions/', include('campus_Connect_Django.discussions.urls')),
+
 ]
 

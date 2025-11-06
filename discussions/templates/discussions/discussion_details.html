@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Campus Connect | {{ discussion.title }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/discussions.css' %}">
+
+<div class="container mt-5 pt-5 mb-5">
+    <!-- Back Button -->
+    <a href="{% url 'discussions_home' %}" class="btn btn-outline-secondary mb-4 rounded-pill px-4">← Back to Discussions</a>
+
+    <!-- Main Discussion Card -->
+    <div class="card shadow-sm mb-4 p-4">
+        <h2 class="fw-bold text-primary mb-2">{{ discussion.title }}</h2>
+        <p class="text-muted mb-1">
+            Posted by <strong>{{ discussion.author }}</strong> · {{ discussion.date_posted|date:"M d, Y H:i" }}
+        </p>
+        <hr>
+        <p class="lead">{{ discussion.content }}</p>
+
+        <div class="d-flex justify-content-between align-items-center mt-3">
+            <div>
+                ❤️ {{ discussion.likes }} likes
+            </div>
+            <button class="btn btn-outline-primary rounded-pill btn-sm px-3">Like</button>
+        </div>
+    </div>
+
+    <!-- Replies Section -->
+    <div class="card shadow-sm p-4 mb-4">
+        <h5 class="fw-bold text-primary mb-3">Replies ({{ discussion.replies.count }})</h5>
+
+        {% for reply in discussion.replies.all %}
+        <div class="reply-card mb-3 p-3 rounded">
+            <div class="d-flex justify-content-between">
+                <p class="fw-semibold mb-1">{{ reply.author }}</p>
+                <small class="text-muted">{{ reply.date_posted|date:"M d, Y H:i" }}</small>
+            </div>
+            <p>{{ reply.content }}</p>
+        </div>
+        {% empty %}
+        <p class="text-muted text-center">No replies yet. Be the first to respond!</p>
+        {% endfor %}
+    </div>
+
+    <!-- Add Reply Form -->
+    <div class="card shadow-sm p-4">
+        <h5 class="fw-bold text-primary mb-3">Add a Reply</h5>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <textarea name="reply_content" rows="4" class="form-control rounded-4" placeholder="Write your reply..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary rounded-pill px-4">Post Reply</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

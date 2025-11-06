@@ -1,0 +1,53 @@
+.discussion-card {
+    border-radius: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discussion-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.btn-outline-primary {
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+input.form-control {
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+form {
+    background-color: #ffffff;
+    border-radius: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-control:focus {
+    border-color: #1E407C;
+    box-shadow: 0 0 0 0.2rem rgba(30, 64, 124, 0.25);
+}
+
+.reply-card {
+    background-color: #f8f9fa;
+    border-left: 4px solid #1E407C;
+    transition: all 0.2s ease-in-out;
+}
+
+.reply-card:hover {
+    background-color: #eef1f6;
+}
+
+.card {
+    border-radius: 16px;
+}
+
+textarea.form-control:focus {
+    border-color: #1E407C;
+    box-shadow: 0 0 0 0.2rem rgba(30, 64, 124, 0.25);
+}

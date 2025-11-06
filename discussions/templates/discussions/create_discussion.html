@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Campus Connect | New Discussion{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/discussions.css' %}">
+
+<div class="container mt-5 pt-5 mb-5" style="max-width: 700px;">
+    <h2 class="fw-bold text-center mb-4 text-primary">Start a New Discussion</h2>
+
+    <form method="POST" class="shadow p-4 rounded bg-white">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="title" class="form-label fw-semibold">Discussion Title</label>
+            <input type="text" name="title" id="title" class="form-control rounded-pill" placeholder="Enter a title..." required>
+        </div>
+
+        <div class="mb-3">
+            <label for="topic" class="form-label fw-semibold">Topic / Category</label>
+            <input type="text" name="topic" id="topic" class="form-control rounded-pill" placeholder="e.g. Data Structures, Psychology, etc.">
+        </div>
+
+        <div class="mb-4">
+            <label for="content" class="form-label fw-semibold">Discussion Content</label>
+            <textarea name="content" id="content" rows="6" class="form-control rounded-4" placeholder="Write your discussion details here..." required></textarea>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <a href="{% url 'discussions_home' %}" class="btn btn-outline-secondary rounded-pill px-4">Cancel</a>
+            <button type="submit" class="btn btn-primary rounded-pill px-4">Post Discussion</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
