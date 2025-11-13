@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Friend Network{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/network.css' %}">
+
+<!-- Hero Section -->
+<section class="network-hero">
+  <div class="hero-left">
+    <h1>Your <span>Network</span></h1>
+    <p>Connect with your classmates, build meaningful friendships, and grow your academic network.</p>
+    <a href="#network" class="btn-get-started">Get Started</a>
+  </div>
+  <div class="hero-right">
+    <img src="{% static 'images/friends.png' %}" alt="Friends illustration">
+  </div>
+</section>
+
+<!-- Subtitle / Intro Text -->
+<p class="network-subtitle">
+  Every connection helps you grow - start connecting with classmates who share your interests.
+</p>
+
+<!-- Network Stats Bar -->
+<div class="network-stats">
+  <div><strong>Connections:</strong> 4</div>
+  <div><strong>Mutual Courses:</strong> 3</div>
+  <div><strong>Campus:</strong> Penn State Abington</div>
+</div>
+
+<!-- Network Graph -->
+<section class="friend-network" id="network">
+  <div class="center-node">
+    <img src="{% static 'images/logo.png' %}" alt="You">
+    <p>You</p>
+  </div>
+
+  <!-- Friends -->
+  <div class="friend f1">
+    <img src="{% static 'images/amro_cc.png' %}" alt="Amro">
+    <p>Amro</p>
+    <div class="info-card">
+      <strong>Major:</strong> Cybersecurity<br>
+      <strong>Year:</strong> Junior<br>
+      <strong>Mutual Courses:</strong> 2
+    </div>
+  </div>
+
+  <div class="friend f2">
+    <img src="{% static 'images/mostafa_cc.png' %}" alt="Mostafa">
+    <p>Mostafa</p>
+    <div class="info-card">
+      <strong>Major:</strong> Software Engineering<br>
+      <strong>Year:</strong> Sophomore<br>
+      <strong>Mutual Courses:</strong> 3
+    </div>
+  </div>
+
+  <div class="friend f3">
+    <img src="{% static 'images/jay_cc.png' %}" alt="Jay">
+    <p>Jay</p>
+    <div class="info-card">
+      <strong>Major:</strong> Computer Science<br>
+      <strong>Year:</strong> Sophomore<br>
+      <strong>Mutual Courses:</strong> 1
+    </div>
+  </div>
+
+  <div class="friend f4">
+    <img src="{% static 'images/dai2.png' %}" alt="Daisia">
+    <p>Daisia</p>
+    <div class="info-card">
+      <strong>Major:</strong> Information Systems<br>
+      <strong>Year:</strong> Senior<br>
+      <strong>Mutual Courses:</strong> 2
+    </div>
+  </div>
+</section>
+
+<!-- People You May Know Section -->
+<section class="people-you-may-know">
+  <h2>People You May Know</h2>
+  <p>Expand your network with new classmates who share similar majors or classes.</p>
+
+  <div class="suggested-grid">
+    <div class="suggested-card">
+      <img src="{% static 'images/sarah_lin.png' %}" alt="Sarah">
+      <h4>Sarah Lin</h4>
+      <p>Major: Data Science</p>
+      <button class="connect-btn">Connect</button>
+    </div>
+
+    <div class="suggested-card">
+      <img src="{% static 'images/mike_torres.png' %}" alt="Mike">
+      <h4>Mike Torres</h4>
+      <p>Major: Information Technology</p>
+      <button class="connect-btn">Connect</button>
+    </div>
+
+    <div class="suggested-card">
+      <img src="{% static 'images/jordan_wright.png' %}" alt="Jordan">
+      <h4>Jordan Wright</h4>
+      <p>Major: Software Engineering</p>
+      <button class="connect-btn">Connect</button>
+    </div>
+  </div>
+</section>
+{% endblock %}

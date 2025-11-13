@@ -1,0 +1,348 @@
+/* Make a CSS var for your nav height if needed */
+:root { --nav-height: 72px; }
+
+/* Two-column hero */
+.network-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;              /* keep side by side */
+  padding: 4rem 10%;
+  background: #ffffff;
+  min-height: 80vh;
+  gap: 3rem;
+  box-sizing: border-box;
+}
+
+.hero-left, .hero-right {
+  flex: 1 1 50%;
+}
+
+/* Left side text */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.hero-left h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #0b3d91;
+  margin-bottom: 1rem;
+}
+
+.hero-left h1 span {
+  color: #1b74ff;
+}
+
+.hero-left p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.btn-get-started {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.3s;
+  width: fit-content;
+}
+
+.btn-get-started:hover {
+  background: #0057e7;
+  transform: translateY(-2px);
+}
+
+/* Right side image */
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-right img {
+  width: 90%;
+  max-width: 520px;
+  height: auto;
+}
+
+/* Graph area “glued” to page height */
+/* Network container */
+.friend-network {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background: #f5f8ff;
+  overflow: hidden;
+}
+
+/* Central user */
+.center-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.center-node img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #0057e7;
+  transition: transform 0.3s ease;
+}
+.center-node img:hover {
+  transform: scale(1.1);
+}
+.center-node p {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* Friend nodes */
+.friend {
+  position: absolute;
+  text-align: center;
+}
+.friend img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #0b3d91;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.friend img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(0, 87, 231, 0.4);
+}
+.friend p {
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+  color: #0b3d91;
+  font-weight: 500;
+}
+
+/* --- Line connectors (edges) --- */
+/* Connectors to the center */
+.friend::after {
+  content: "";
+  position: absolute;
+  top: 50%;   /* Start from friend’s center */
+  left: 50%;
+  width: 2px;
+  height: 0;
+  background: #a3b8e8;
+  transform-origin: top left;
+  z-index: 1;
+}
+
+/* Friend positioning (around the center) */
+.f1 { top: 10%; left: 48%; }
+.f2 { top: 25%; right: 15%; }
+.f3 { bottom: 20%; right: 20%; }
+.f4 { bottom: 15%; left: 20%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.friend img, p {
+  animation: float 4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.3s);
+}
+
+.friend-network::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(11,61,145,0.04) 0, transparent 2px, transparent 40px),
+              repeating-linear-gradient(90deg, rgba(11,61,145,0.04) 0, transparent 2px, transparent 40px);
+  animation: gridMove 15s linear infinite;
+}
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}
+
+/* ============================================================= */
+/* 🌐 NETWORK PAGE ENHANCEMENTS */
+/* ============================================================= */
+
+/* Subtitle below hero */
+.network-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #0b3d91;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+  animation: fadeUp 1s ease forwards;
+}
+
+/* Stats Ribbon */
+.network-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  font-weight: 500;
+  color: #0b3d91;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1rem 2rem;
+  border-top: 2px solid #c6d6ff;
+  border-bottom: 2px solid #c6d6ff;
+  backdrop-filter: blur(10px);
+  animation: fadeUp 1s ease 0.3s forwards;
+  opacity: 0;
+}
+
+/* Hover Info Cards */
+.info-card {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border: 2px solid #0057e7;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  width: 160px;
+  text-align: left;
+}
+
+.friend:hover .info-card {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Fade-in animation for network graph */
+.friend-network {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================= */
+/* 👥 PEOPLE YOU MAY KNOW SECTION */
+/* ============================================================= */
+
+.people-you-may-know {
+  background: #ffffff;
+  padding: 4rem 10%;
+  text-align: center;
+  border-top: 3px solid #e6ecff;
+  border-bottom: 3px solid #e6ecff;
+  animation: fadeUp 1.2s ease 0.6s forwards;
+  opacity: 0;
+}
+
+.people-you-may-know h2 {
+  font-size: 2.2rem;
+  color: #0b3d91;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.people-you-may-know p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.suggested-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.suggested-card {
+  background: #f5f8ff;
+  border: 2px solid #c6d6ff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 220px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.suggested-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,87,231,0.1);
+}
+
+.suggested-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #0057e7;
+  margin-bottom: 1rem;
+}
+
+.suggested-card h4 {
+  font-size: 1.1rem;
+  color: #0b3d91;
+  margin-bottom: 0.3rem;
+}
+
+.suggested-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.connect-btn {
+  background: #1b74ff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.connect-btn:hover {
+  background: #0b3d91;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 860px) {
+  .network-stats {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .people-you-may-know {
+    padding: 3rem 6%;
+  }
+
+  .suggested-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}

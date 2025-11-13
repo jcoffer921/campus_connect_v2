@@ -4,6 +4,140 @@ body {
   overflow-x: hidden;
 }
 
+.page-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+.content { flex: 1; /* NEW: keep content under fixed navbar */ padding-top: 72px; }
+
+/* ====== Base Styles ====== */
+/* ===============================
+   FOOTER — Consistent with Theme
+   =============================== */
+.site-footer {
+  background: #000000;
+  color: #E5E7EB;
+  padding: 3rem 1rem 1rem;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 220px;
+  margin: 1rem;
+}
+
+.footer-logo-img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 0.8rem;
+}
+
+.footer-tagline {
+  color: #C5D2F0;
+  font-size: 0.9rem;
+}
+
+.footer-column h4 {
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-column a {
+  color: #C5D2F0;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.penn-blue {
+  color: #C5D2F0;
+  font-weight: 600;
+}
+
+/* ===============================
+   NAVBAR — Penn State Theme
+   =============================== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 72px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000; /* Penn State navy */
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: #142C65;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.brand-logo {
+  height: 44px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #C5D2F0;
+  border-color: #C5D2F0;
+}
+
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -81,15 +215,6 @@ body {
   transform: scale(1.2);
 }
 
-
-/* Navbar Scroll */
-.navbar {
-  transition: background 0.3s ease;
-}
-.navbar.scrolled {
-  background: rgba(0, 0, 0, 0.85) !important;
-}
-
 .penn-state-text {
   color: #1E407C;
   position: relative;
@@ -107,8 +232,4 @@ body {
   }
 }
 
-footer {
-  color: #9CA3AF;
-  font-size: 0.85rem;
-  padding: 1rem 0;
-}
+

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/messages.css' %}">
+
+<div class="chat-container">
+  <!-- LEFT SIDEBAR -->
+  <aside class="chat-sidebar">
+    <div class="sidebar-header">
+      <h2>Messages</h2>
+      <button class="add-chat">+</button>
+    </div>
+
+    <div class="chat-list">
+      <div class="chat-item active">
+        <img src="{% static 'images/amro_cc.png' %}" alt="User">
+        <div>
+          <h4>Amro</h4>
+          <p>Hey! Are you ready for the exam?</p>
+        </div>
+        <span class="time">2m</span>
+      </div>
+
+      <div class="chat-item">
+        <img src="{% static 'images/mostafa_cc.png' %}" alt="User">
+        <div>
+          <h4>Mostafa</h4>
+          <p>Let’s meet after class!</p>
+        </div>
+        <span class="time">1h</span>
+      </div>
+
+      <div class="chat-item">
+        <img src="{% static 'images/user3.jpg' %}" alt="User">
+        <div>
+          <h4>Jordan Kim</h4>
+          <p>Check out that project repo!</p>
+        </div>
+        <span class="time">3h</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MIDDLE CONVERSATION -->
+  <main class="chat-main">
+    <div class="chat-header">
+      <img src="{% static 'images/amro_cc.png' %}" alt="User">
+      <div>
+        <h3>Amro</h3>
+        <p>Online • Computer Science, 2027</p>
+      </div>
+    </div>
+
+    <div class="chat-body">
+      <div class="message received">
+        <p>Hey Jason! How’s your data structures project going?</p>
+        <span>Yesterday • 5:43 PM</span>
+      </div>
+      <div class="message sent">
+        <p>Pretty good! I’m using graphs for the student network visualization.</p>
+        <span>Yesterday • 5:45 PM</span>
+      </div>
+      <div class="message received">
+        <p>That’s awesome 🔥 let me know if you need a tester!</p>
+        <span>Today • 10:02 AM</span>
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" placeholder="Type a message..." />
+      <button>➤</button>
+    </div>
+  </main>
+
+  <!-- RIGHT PROFILE PANEL -->
+  <aside class="chat-profile">
+    <img src="{% static 'images/amro_cc.png' %}" alt="Profile Pic" class="profile-pic">
+    <h3>Amro</h3>
+    <p class="major">Computer Science • Class of 2027</p>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> amro123@psu.edu</p>
+      <p><strong>Phone:</strong> (555) 123-4567</p>
+    </div>
+
+    <div class="bio">
+      <p>Passionate about data science. Always open to collaborate on campus projects!</p>
+    </div>
+
+    <div class="social-icons">
+      <a href="#"><img src="{% static 'images/icons/fb-logo.svg' %}" alt="FB"></a>
+      <a href="#"><img src="{% static 'images/icons/insta-logo.svg' %}" alt="IG"></a>
+      <a href="#"><img src="{% static 'images/icons/linkedin-logo.svg' %}" alt="LI"></a>
+    </div>
+  </aside>
+</div>
+{% endblock %}
